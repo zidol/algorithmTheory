@@ -12,9 +12,9 @@
 
 #### 애니메이션으로 쉽게 이해하기: https://visualgo.net/en/sorting
 
-<img src="https://ichi.pro/assets/images/max/724/1*iAZJF0JvQrFDnDxri88bGQ.gif" />
+<img src="https://blog.kakaocdn.net/dn/bUriug/btq090GyQBk/YU1pmyrtM6gypU0kvrQ3dk/img.gif" />
 
-> 출처: https://ichi.pro/ko/python-ui-algolijeum-mich-deiteo-gujo-beobeul-jeonglyeol-mich-choejeoghwa-247834985451775
+> 출처: https://blog.kakaocdn.net/dn/bUriug/btq090GyQBk/YU1pmyrtM6gypU0kvrQ3dk/img.gif
 
 * 데이터가 네 개 일때 (데이터 갯수에 따라 복잡도가 떨어지는 것은 아니므로, 네 개로 바로 로직을 이해해보자.)
     - 예: dataList = [1, 9, 3, 2]
