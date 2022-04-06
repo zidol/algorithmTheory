@@ -28,8 +28,8 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         ArrayList<Integer> testData = new ArrayList<Integer>();
-        for (int i = 0; i < 100; i++) {
-            testData.add((int)(Math.random() * 100));
+        for (int i = 0; i < 20; i++) {
+            testData.add((int)(Math.random() * 20));
         }
         System.out.println(testData);;
         BubbleSort bubbleSort = new BubbleSort();
