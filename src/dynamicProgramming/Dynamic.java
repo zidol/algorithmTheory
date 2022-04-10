@@ -1,4 +1,4 @@
-package sort.dynamicProgramming;
+package dynamicProgramming;
 
 public class Dynamic {
     public int dynamicFunc(int data) {

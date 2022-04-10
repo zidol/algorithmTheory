@@ -1,4 +1,4 @@
-package sort.recursive;
+package recursive;
 
 import java.util.ArrayList;
 
