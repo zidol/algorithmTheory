@@ -2,14 +2,17 @@ package search.binarySearch;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 
 public class BinarySearch {
 
     public boolean contains(ArrayList<Integer> dataList, Integer searchItem) {
-        if (dataList.size() == 1 && searchItem == dataList.get(0)) {
+        //if (dataList.size() == 1 && searchItem == dataList.get(0)) {  //NPE 때문에 변경
+        if (dataList.size() == 1 && Objects.equals(searchItem, dataList.get(0))) {
             return true;
         }
-        if (dataList.size() == 1 && searchItem != dataList.get(0)) {
+        ///if (dataList.size() == 1 && searchItem != dataList.get(0)) {
+        if (dataList.size() == 1 && !Objects.equals(searchItem, dataList.get(0))) {
             return false;
         }
         if (dataList.size() == 0) {
@@ -18,7 +21,8 @@ public class BinarySearch {
 
         int mid = dataList.size() / 2;
 
-        if (searchItem == dataList.get(mid)) {
+        //if (searchItem == dataList.get(mid)) {
+        if (Objects.equals(searchItem, dataList.get(mid))) {
             return true;
         } else {
             if (searchItem < dataList.get(mid)) {
