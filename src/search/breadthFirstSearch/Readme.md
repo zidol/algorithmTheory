@@ -5,6 +5,7 @@
 2. 시작 노드로부터 가까운 노드를 먼저 방문하고 멀리 떨어져 있는 정점을 나중에 방문하는 순회 방법
 3. 즉 깊게(deep) 탐색하기 전에 넓게(wide) 탐색하는 것
 4. 두 노드 사이의 최단 경로 혹은 임의의 경로를 찾고 싶을 때 이 방법을 선택함
+
 <img src="https://blog.kakaocdn.net/dn/c305k7/btqB5E2hI4r/ea7vFo08tkDYo4c8wkfVok/img.gif">
 
 출처 https://developer-mac.tistory.com/64
@@ -25,11 +26,12 @@
 ### 1) 깊이 우선 탐색이란?
 1. 루트 노드(혹은 다른 임의의 노드)에서 시작해서 다음 분기(branch)로 넘어가기 전에 해당 분기를 완벽하게 탐색하는 방법
 2. 미로를 탐색할 때 한 방향으로 갈 수 있을 때까지 계속 가다가 더 이상 갈 수 없게 되면 다시 가장 가까운 갈림길로 돌아와서 이곳으로부터 다른 방향으로 다시 탐색을 진행하는 방법과 유사함
-2. 즉 넓게(wide) 탐색하기 전에 깊게(deep) 탐색함
-3. 모든 노드를 방문하고자 하는 경우에 이 방법을 선택함
-4. 깊이 우선 탐색(DFS)이 너비 우선 탐색(BFS)보다 좀 더 간단함
-5. 검색 속도 자체는 너비 우선 탐색(BFS)에 비해서 느림
-   <img src="https://blog.kakaocdn.net/dn/xC9Vq/btqB8n5A25K/GyOf4iwqu8euOyhwtFuyj1/img.gif">
+3. 즉 넓게(wide) 탐색하기 전에 깊게(deep) 탐색함
+4. 모든 노드를 방문하고자 하는 경우에 이 방법을 선택함
+5. 깊이 우선 탐색(DFS)이 너비 우선 탐색(BFS)보다 좀 더 간단함
+6. 검색 속도 자체는 너비 우선 탐색(BFS)에 비해서 느림
+
+<img src="https://blog.kakaocdn.net/dn/xC9Vq/btqB8n5A25K/GyOf4iwqu8euOyhwtFuyj1/img.gif">
 
 출처 https://developer-mac.tistory.com/64
 
