@@ -43,6 +43,7 @@ public class GreedyAlgorithm {
         for (int i = 0; i < objList.length; i++) {
             //
             if (capacity - (double) objList[i][0] > 0) {
+                //무게당 가치가 높은 순으로 objList를 먼저 정렬 하였기때문에 쪼개지 않은 무게를 그대로 뺄수 있음
                 capacity -= (double) objList[i][0];
                 totalValue += (double) objList[i][1];
                 System.out.println("무게 : " +objList[i][0] + " , 가치 : " + objList[i][1]);
@@ -50,6 +51,7 @@ public class GreedyAlgorithm {
                 fraction = capacity / (double) objList[i][0];
                 totalValue += (double) objList[i][1] * fraction;
                 System.out.println("무게 : " + objList[i][0] + " , 가치 : " + objList[i][1] + ", 비율 : " + fraction);
+                //무게가 음수라는건 더 다음 회차때 더 넣을수 없기때문에 for문 종료
                 break;
             }
         }
