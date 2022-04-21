@@ -10,8 +10,15 @@ public class Dijkstra {
     public HashMap<String, Integer> dijkstraFunc(HashMap<String, ArrayList<Edge>> graph, String start) {
 
         Edge edgeNode, adjacentNode;
-        int currentDistance, weight, distance;
-        String currentNode, adjacent;
+        // 우선순위 큐에서 꺼낸 거리
+        int currentDistance;
+        int distance;
+        // 우선 순위에서 큐에서 꺼낸 노드 이름
+        String currentNode;
+        //근접 노드 가중치
+        int weight;
+        //근접 논드 명
+        String adjacent;
         ArrayList<Edge> nodeList;
         //거리 저장 배열 초기화
         HashMap<String, Integer> distances = new HashMap<>();
@@ -35,7 +42,7 @@ public class Dijkstra {
             if (distances.get(currentNode) < currentDistance) {
                 continue;
             }
-
+            //근접한 노드(엣지)들
             nodeList = graph.get(currentNode);
             for (int i = 0; i < nodeList.size(); i++) {
 
@@ -67,7 +74,7 @@ public class Dijkstra {
         graph.put("F", new ArrayList<Edge>(Arrays.asList(new Edge(5, "A"))));
 
         Dijkstra dijkstra = new Dijkstra();
-        System.out.println(dijkstra.dijkstraFunc(graph, "A"));;
+        System.out.println(dijkstra.dijkstraFunc(graph, "C"));;
 
 
     }
