@@ -1,8 +1,10 @@
 # 탐색 알고리즘
 ## 2. 이진탐색(Binary Search)
 ### 1. 순차 탐색 이란?
-* 탐색할 자료를 둘로 나누어 해당 데이터가 있을만한 곳을 탐색하는 방법
-  <img src="https://blog.penjee.com/wp-content/uploads/2015/04/binary-and-linear-search-animations.gif">
+- 탐색할 자료를 둘로 나누어 해당 데이터가 있을만한 곳을 탐색하는 방법
+
+<img src="https://blog.penjee.com/wp-content/uploads/2015/04/binary-and-linear-search-animations.gif">
+
 > 출처 : 이미지 내
 
 ### 2. 분할 정복 알고리즘의 이진 탐색
