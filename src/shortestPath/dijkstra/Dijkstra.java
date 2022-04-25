@@ -1,4 +1,4 @@
-package shortestPath;
+package shortestPath.dijkstra;
 
 import java.util.ArrayList;
 import java.util.Arrays;

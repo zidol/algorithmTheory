@@ -1,4 +1,4 @@
-package minimumSpanningTree.primImproved;
+package shortestPath.minimumSpanningTree.primImproved;
 
 public class Edge implements Comparable<Edge> {
 

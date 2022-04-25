@@ -1,4 +1,4 @@
-package minimumSpanningTree.kruskal;
+package shortestPath.minimumSpanningTree.kruskal;
 
 public class Edge implements Comparable<Edge> {
 

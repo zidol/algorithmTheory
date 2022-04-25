@@ -1,4 +1,4 @@
-package minimumSpanningTree.prim;
+package shortestPath.minimumSpanningTree.prim;
 
 import java.util.ArrayList;
 import java.util.HashMap;
