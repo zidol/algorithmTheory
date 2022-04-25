@@ -4,6 +4,8 @@ public class Edge implements Comparable<Edge> {
 
     //연결된 두 노드와 가중치를 갖는 Edge
     public int weight;
+
+    //엣지에 연결되어있는 노드
     public String nodeV;
     public String nodeU;
 
