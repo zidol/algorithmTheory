@@ -2,7 +2,9 @@ package shortestPath.minimumSpanningTree.primImproved;
 
 public class Edge implements Comparable<Edge> {
 
+    //인접된 노드의 이름
     public String node;
+    //인접된 노드의 접근하는 weight
     public int weight;
 
     public Edge(String node, int weight) {

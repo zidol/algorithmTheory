@@ -8,6 +8,7 @@ public class PrimImproved {
 
     public List<Path> primFunc(Map<String, Map<String, Integer>> graph, String startNode) {
         List<Path> mst = new ArrayList<>();
+        //전체 노드들
         PriorityQueue<Edge> keys = new PriorityQueue<>();
 
         //node to node 정보 담는 맵
@@ -27,13 +28,17 @@ public class PrimImproved {
         for (String key : graph.keySet()) {
 
             if (key == startNode) {
+                //엣지 정보
                 edgeObject = new Edge(key, 0);
+                //노드와 노드의연결 정보를 담는 Map
                 mstPath.put(key, key);
             } else {
                 edgeObject = new Edge(key, Integer.MAX_VALUE);
                 mstPath.put(key, null);
             }
+            //각각의 노드 : 0 또는 최대값
             keys.add(edgeObject);
+            //각 노드의 해당 객체
             keysObjects.put(key, edgeObject);
         }
 
@@ -65,6 +70,8 @@ public class PrimImproved {
     }
 
     public static void main(String[] args) {
+
+
         Map<String, Map<String, Integer>> graph = new HashMap<String, Map<String, Integer>>();
 
         Map<String, Integer> edges;

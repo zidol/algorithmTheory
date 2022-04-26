@@ -29,7 +29,7 @@ public class KruskalPath {
             parent.put(root2, root1);
         } else {//같거나 root2가 클때
             parent.put(root1, root2);
-            //root2 랭크가 클때
+            //랭크가 같을때
             if (Objects.equals(rank.get(root1), rank.get(root2))) {
                 rank.put(root2, rank.get(root2) + 1);
             }
@@ -53,7 +53,6 @@ public class KruskalPath {
         for (String vertex : vertices) {
             makeSet(vertex);
         }
-
         //2. 간선의 weight 기반 sorting
         Collections.sort(edges);
 
