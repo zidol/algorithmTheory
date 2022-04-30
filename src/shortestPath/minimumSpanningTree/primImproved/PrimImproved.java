@@ -41,6 +41,9 @@ public class PrimImproved {
             //각 노드의 해당 객체
             keysObjects.put(key, edgeObject);
         }
+        System.out.println("keys : " + keys);
+        System.out.println("keysObjects : " + keysObjects);
+        System.out.println("mstPath : " + mstPath);
 
         while (keys.size() > 0) {
             poppedEdge = keys.poll();
@@ -51,19 +54,25 @@ public class PrimImproved {
             //인접 간선정보
             linkedEdges = graph.get(poppedEdge.node);
             for (String adjacent: linkedEdges.keySet()) {
+                //아직 체크되지 않은 키들을 체크
+                //인접 노드가 있는지 확인
                 if (keysObjects.containsKey(adjacent)) {
+                    //인접한 edge
                     linkedEdge = keysObjects.get(adjacent);
 
                     //가중치 비교
                     if (linkedEdges.get(adjacent) < linkedEdge.weight) {
                         linkedEdge.weight = linkedEdges.get(adjacent);
+                        //pop한 노드(poppedEdge.node)와 인접노드(adjacent)를 이어줌
                         mstPath.put(adjacent, poppedEdge.node);
                         //최소힙 유지
+                        //중간값을 업데이트 하지 못하기때문에 해당 노드를 삭제 후 다시 넣어줌
                         keys.remove(linkedEdge);
                         keys.add(linkedEdge);
                     }
                 }
             }
+            System.out.println("keys : " + keys);
         }
         System.out.println(totalWeight);
         return mst;

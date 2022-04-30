@@ -4,17 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Nqueen {
+    //currentCandidate 선택된 위치
     public void dfsFunc(Integer n, Integer currentRow, List<Integer> currentCandidate) {
 
         //모든 row 다 돌았다면
         if (currentRow == n) {
             System.out.println(currentCandidate);
+            return;
         }
+        //컬럼 체크
         for (int i = 0; i < n; i++) {
 
             //위치가 적합하다
             if (isAvailable(currentCandidate, i)) {
                 currentCandidate.add(i);
+                //다음 행 탐색
                 dfsFunc(n, currentRow + 1, currentCandidate);
                 //조건이 만족되는게 없을때 가지치기(조건이 만족 하지 않으면 다시 돌아가기 위해)
                 currentCandidate.remove(currentCandidate.size() - 1);
@@ -25,6 +29,7 @@ public class Nqueen {
     public boolean isAvailable(List<Integer> candidate, Integer currentCol) {
         int currentRow = candidate.size();  //currentCandidate 사이즈는 현재 확인해야할 행의 위치를 알려줌
         for (int i = 0; i < currentRow; i++) {
+            // 수직 || 대각선 체크
             if ((candidate.get(i) == currentCol) || (Math.abs(candidate.get(i) - currentCol) == currentRow - i)) {
                 return false;
             }

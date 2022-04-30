@@ -99,10 +99,6 @@ public class KruskalPath {
         KruskalPath kruskalPath = new KruskalPath();
 
         List<Edge> edges1 = kruskalPath.kruskalFunc(vertices, edges);
-        System.out.println(kruskalPath.parent);
-        System.out.println(kruskalPath.rank);
-        for (Edge edge : edges1) {
-            System.out.println("edge = " + edge);
-        }
+        System.out.println("edges1 = " + edges1);
     }
 }

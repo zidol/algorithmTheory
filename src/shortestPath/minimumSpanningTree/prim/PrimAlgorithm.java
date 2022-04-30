@@ -45,7 +45,6 @@ public class PrimAlgorithm {
             currentEdgeList = adjacentEdges.get(currentEdge.node2);
             currentEdgeList.add(new Edge(currentEdge.weight, currentEdge.node2, currentEdge.node1));
         }
-        System.out.println("adjacentEdges : " + adjacentEdges);
         connectedNodes.add(startNode);
         candidateEdgeList = adjacentEdges.getOrDefault(startNode, new ArrayList<Edge>());//에러 방지를 위해 디폴트값
         priorityQueue = new PriorityQueue<Edge>();// 최소힙 구현
@@ -61,6 +60,7 @@ public class PrimAlgorithm {
         while (priorityQueue.size() > 0) {
             //최소의 간선을 pop(priorityQueue 최소 힙이기 때문에)
             poppedEdge = priorityQueue.poll();
+            System.out.println("poppedEdge ; " + poppedEdge);
             //node2가  connectedNodes에 포함되면 사이클 형성
             if (!connectedNodes.contains(poppedEdge.node2)) {
                 //해당 edge를 mst에 추가
@@ -78,6 +78,7 @@ public class PrimAlgorithm {
                 }
             }
         }
+        System.out.println(connectedNodes);
         return mst;
 
     }
