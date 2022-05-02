@@ -53,13 +53,17 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        n = Integer.parseInt(st.nextToken());
+        String str;
+        n = Integer.parseInt(br.readLine());
         nums = new int[n + 1];
         operators = new int[5];
         order = new int[n + 1];
+
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         for (int i = 1; i <= n; i++) nums[i] = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine(), " ");
         for (int i = 1; i <= 4; i++) operators[i] = Integer.parseInt(st.nextToken());
 
         max = Integer.MIN_VALUE;
