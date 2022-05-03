@@ -10,40 +10,37 @@ public class Main {
     static int[] nums, operators, order;
     static StringBuilder sb = new StringBuilder();
 
-    //완성된 식에 맞게 계산을 햇허 정답에 갱신하는 작업
-    static int calculator() {
-        //nums, order
-        int value = nums[1];
-        for (int i = 1; i <= n - 1; i++) {
-            //value, order[i], nums[i+1]
-            if (order[i] == 1) { // +
-                value = value + nums[i + 1];
-            }
-            if (order[i] == 2) { // -
-                value = value - nums[i + 1];
-            }
-            if (order[i] == 3) { // *
-                value = value * nums[i + 1];
-            }
-            if (order[i] == 4) { // /
-                value = value / nums[i + 1];
-            }
+    //피연산자 2개와 연산자가 주어졌을 때 계산해주는 함수
+    static int calculator(int operand, int operator, int operand2) {
+        //value, order[i], nums[i+1]
+        if (operator == 1) { // +
+            return operand + operand2;
         }
-        return value;
+        else if (operator == 2) { // -
+            return operand - operand2;
+        }
+        else if (operator == 3) { // *
+            return operand * operand2;
+        }
+        else {
+            return operand / operand2;
+        }
     }
-    static void rec_func(int k) {
-        if (k == n) {
+    // order[1...n-1]에 연산자들이 순서대로 저장될 것이다.
+    //k-1번째 연산자까지 계산한 결과가 value이다.
+    static void rec_func(int k, int value) {
+        if (k == n) {//모든 연산자들을 전부 나열하는 방법을 찾은 상태
             //완성된 식에 맞게 계산을 햇허 정답에 갱신하는 작업
-            int value = calculator();
+//            int value = calculator();
             max = Math.max(max, value);
             min = Math.min(min, value);
         } else {
-            //
+            //4가지의 연산자들 중에 뭘 쓸 것인지 선택하고 연산자를 계산한 후에 재귀 호출하기
             for (int cand = 1; cand <= 4; cand++) {
                 if (operators[cand] >= 1) {
                     operators[cand]--;
                     order[k] = cand;
-                    rec_func(k + 1);
+                    rec_func(k + 1, calculator(value, cand, nums[k + 1]));
                     operators[cand]++;
                     order[k] = 0;
                 }
@@ -69,7 +66,7 @@ public class Main {
         max = Integer.MIN_VALUE;
         min = Integer.MAX_VALUE;
 
-        rec_func(1);
+        rec_func(1, nums[1]);
         sb.append(max).append('\n').append(min);
         System.out.println(sb.toString());
 
