@@ -32,7 +32,7 @@ public class InsertionSort {
         List<Integer> dataList = new ArrayList<>();
 
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             dataList.add((int)(Math.random() * 20));
         }
 
