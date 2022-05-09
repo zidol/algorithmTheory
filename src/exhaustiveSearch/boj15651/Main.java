@@ -17,11 +17,13 @@ public class Main {
         FastReader scan = new FastReader();
         n = scan.nextInt();
         m = scan.nextInt();
-        selected = new int[m + 1];
+        selected = new int[m + 1];//{0, 1, 2, 3, 4} 중괄호 안 : 인덱스
     }
-
+    //만약 m 개를 전부 고른경우 : 조건에 맞는 탐색을 한 가지 성공한 것
+    //아직 m 개를 고르지 않음 :  k번째부터 m 번째 원소를 조건에 맞게 고르는 모든 방법을 시도
     static void rec_func(int k) {
         if (k == m + 1) {
+            //m개를 다 골라 수열을 문자열로 붙임
             for (int i = 1; i <= m; i++) sb.append(selected[i]).append(' ');
             sb.append('\n');
         } else {

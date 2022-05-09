@@ -27,6 +27,7 @@ public class Main {
             for (int i = 1; i <= m; i++) sb.append(selected[i]).append(' ');
             sb.append('\n');
         } else {
+            //이전 원소시작값도다 무조건 하나보다 커야 하므로(중복없이 오름차순)
             for (int cand = selected[k - 1] + 1; cand <= n; cand++) {
                 selected[k] = cand;
                 rec_func(k + 1);

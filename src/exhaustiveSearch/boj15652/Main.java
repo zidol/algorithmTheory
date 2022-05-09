@@ -26,6 +26,7 @@ public class Main {
             for (int i = 1; i <= m; i++) sb.append(selected[i]).append(' ');
             sb.append('\n');
         } else {
+            //이전 인덱스의 숫자보단 커야 하기 때문에 for 문 시작값을 설정해줌(start값 보다 크거나 같으므로)
             int start = selected[k - 1];
             //0은 쓸수 없고 1부터 n까지 쓸수 있기 때문에.
             if(start == 0) start = 1;
