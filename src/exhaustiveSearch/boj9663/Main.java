@@ -21,7 +21,7 @@ public class Main {
             for (int i = 1; i <= n; i++) {
                 boolean possible = true;
                 //valid check (row, c)
-                for (int j = 1; j <=row - 1; j++) {
+                for (int j = 1; j <=row - 1; j++) {//이전의 row 탐색
                     if (attackable(row, i, j, col[j])) {
                         possible = false;
                         break;
@@ -37,9 +37,9 @@ public class Main {
     }
 
     static boolean validity_check() {
-        for (int i = 0; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             //(i, col[i]) i행 i열
-            for (int j = 0; j < i; j++) {
+            for (int j = 1; j < i; j++) {
                 //(j, col[j[)
                 if (attackable(i, col[i], j, col[j])) {
                     return false;
@@ -50,7 +50,7 @@ public class Main {
     }
 
     //공격 여부
-    static boolean attackable(int r1, int c1, int r2, int c2) {
+    static boolean attackable(int r1, int c1, int r2, int c2) {//r : 행, c : 열
         if(c1 == c2) return true;//같은 열
         if(r1 - c1 == r2 - c2) return true;//왼쪽 대각선 관계
         return r1 + c1 == r2 + c2;//오른쪽 대각선 관계

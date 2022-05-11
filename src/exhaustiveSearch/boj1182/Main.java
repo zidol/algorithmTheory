@@ -41,8 +41,8 @@ public class Main {
         st = new StringTokenizer(br.readLine());
         for (int i = 1; i <= n; i++) nums[i] = Integer.parseInt(st.nextToken());
 
-        //1번째 우너소부터 m 번째 원소를 조건에 맞게 고르는 모든 방법을 탐색
-        rec_func(1, 0);
+        //1번째 원소부터 m 번째 원소를 조건에 맞게 고르는 모든 방법을 탐색
+        rec_func(1, 0);// 시작값은 0으로 시작
         //ans가 정말 "진 부분집합"만 다루는지 확인
         if (s == 0) {
             ans--;
